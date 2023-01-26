@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" placeholder="type text" id="speach">
+    <button onclick="speakit()">Click me!!!</button>
+    <script>
+        const userText = document.getElementById('speach')
+        function speakit(){
+            const utternace = new SpeechSynthesisUtterance(userText.value);
+            utternace.pitch = 2;
+            window.speechSynthesis.speak(utternace);
+            userText.value = "" 
+        }
+    </script>
+</body>
+</html>
